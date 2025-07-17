@@ -1,5 +1,5 @@
 # Aave-DeFi-Wallet-Credit-Scorer
-# Credit Scoring for Aave V2 Wallets
+## Credit Scoring for Aave V2 Wallets
 
 ## Overview
 This project assigns a credit score (0–1000) to each wallet address based on historical transaction behavior on the Aave V2 protocol. The score reflects the reliability and responsibility of each wallet, using only transaction-level data.
@@ -26,12 +26,29 @@ This project assigns a credit score (0–1000) to each wallet address based on h
 - Scores are clipped to the range [0, 1000].
 
 ## How to Run
-1. Place `user-transactions.json` in the same directory as `credit_score.py`.
-2. Run the script:
+1. Create a virtual environment
+   ```
+    python -m venv venv
+   ```
+2. Activate the environment
+   ```
+   venv\Scripts\activate
+   ```
+3. Place `user-transactions.json` in the same directory as `credit_score.py`.
+4. Run the script:
    ```
    python credit_score.py
    ```
-3. The output file `wallet_scores.csv` will contain wallet addresses and their credit scores.
+5. The output file `wallet_scores.csv` will contain wallet addresses and their credit scores.
+6. Run plot script to get the graph of credit scores
+   ```
+   python plot_scores.py
+   ```
+7. Run score_count to get the count
+   ```
+   python score_counts.py
+   ```
+8. Graph will be saved in .png format in the folder
 
 ## Extensibility
 - The scoring logic and feature weights can be easily adjusted in the script.
